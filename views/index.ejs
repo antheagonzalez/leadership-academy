@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leadership Academy</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch-theme-algolia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+  <header>
+    <div class="ui search">
+      <input id="search-input" class="prompt" type="text" placeholder="Search...">
+    </div>
+  </header>
+  <main>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+  </main>
+  <script type="text/html" id="hit-template">
+      <div class="ui card">
+      <div class="content">
+        <div class="center aligned header">{{{_highlightResult.firstname.value}}} {{{_highlightResult.lastname.value}}}</div>
+        <div class="description">
+          <span class="email"><b>Email:</b> {{{_highlightResult.email.value}}}</span>
+        </div>
+        <div class="description">
+          <span class="date"><b>Start Date:</b> {{{_highlightResult.startDate.value}}}</span>
+        </div>
+        <div class="description">
+          <span class="events"><b>Events Attended:</b> {{eventsAttended}}</span>
+        </div>
+      </div>
+      <div class="extra content">
+        <a>
+          <i class="star icon"></i>
+          {{totalPoints}}
+        </a>
+      </div>
+    </div>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
