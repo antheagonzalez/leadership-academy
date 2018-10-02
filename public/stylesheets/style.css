@@ -1,5 +1,5 @@
 body {
-  background-color: #0C427E;
+  background-color: #3B5998;
 }
 .ais-hits{
   display: flex;
@@ -21,4 +21,10 @@ body {
 #pagination{
   display: flex;
   justify-content: center;
+}
+
+#signInWithGoogle {
+  display: flex;
+  justify-content: center;
+  margin-top: 9vh;
 }
