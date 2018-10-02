@@ -73,4 +73,4 @@ app.get('/login', (req, res) => {
   res.render('login', {error: req.flash('error')[0]});
 });
 
-app.listen(50000, () => console.log('App Running!'));
+app.listen(process.env.PORT, () => console.log('App Running!'));
