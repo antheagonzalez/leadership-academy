@@ -41,7 +41,7 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
-    if (profile.emails[0].value === process.env.user) {
+    if (JSON.parse(process.env.authUsers).includes(profile.emails[0].value)) {
       done(null, profile);
     } else {
       done(null, false, { message: "User not a registered admin."});
