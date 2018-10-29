@@ -1,6 +1,16 @@
 body {
-  background-color: #3B5998;
+  background-color: 	#f7f7f7;
 }
+
+.ui.card,
+.ui.cards>.card {
+  background-color: 	#3b5998;
+}
+
+.email, .date, .events, .eventlist, .star.icon, .points, .ais-range-input--fieldset {
+  color: white;
+}
+
 .ais-hits{
   display: flex;
   flex-wrap: wrap;
@@ -10,14 +20,41 @@ body {
 .ui.search {
   display: flex;
   justify-content: center;
+  margin-top: 16px;
 }
 
-.ais-hits--item{
+.ui.grid {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.ais-hits--item {
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+.ais-refinement-list--label, .ais-refinement-list--count{
+  color: white;
+}
+
+.ais-stats--body {
+  color: black;
+}
+.results {
+  height: 1000px;
+  overflow: scroll;
+}
+
+.filters {
+  margin-top: 30px;
+}
+
+.events {
+  margin-top: 20px;
+}
+
 #pagination{
   display: flex;
   justify-content: center;
@@ -27,4 +64,15 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 9vh;
+}
+
+#events {
+  height: 600px;
+  overflow: scroll;
+}
+
+#stats {
+  display: flex;
+  justify-content: center;
+  color: white;
 }

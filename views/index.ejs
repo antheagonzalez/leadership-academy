@@ -13,31 +13,62 @@
     <div class="ui search">
       <input id="search-input" class="prompt" type="text" placeholder="Search...">
     </div>
+    <div id="stats"></div>
   </header>
   <main>
-      <div id="hits"></div>
-      <div id="pagination"></div>
+    <div class="ui grid">
+      <div class="six wide column filters">
+        <div class="ui container points">
+          <div class="ui fluid card">
+            <div class="content">
+              <div class="center aligned header" style="color: white">Points</div>
+              <div class="center aligned description">
+                <div class="row" id="points"></div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="center aligned header" style="color: white">Events</div>
+            </div>
+            <div class="content">
+              <div class="description">
+                <div class="row" id="events"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nine wide column results">
+        <div id="hits"></div>
+        <div id="pagination"></div>
+      </div>
+    </div>
   </main>
   <script type="text/html" id="hit-template">
       <div class="ui card">
-      <div class="content">
-        <div class="center aligned header">{{{_highlightResult.firstname.value}}} {{{_highlightResult.lastname.value}}}</div>
-        <div class="description">
-          <span class="email"><b>Email:</b> {{{_highlightResult.email.value}}}</span>
+        <!-- <div class="content">
+          <div class="center aligned header">{{{_highlightResult.firstname.value}}} {{{_highlightResult.lastname.value}}}</div>
+        </div> -->
+        <div class="content">
+          <div class="center aligned header" style="color: white">{{{_highlightResult.firstname.value}}} {{{_highlightResult.lastname.value}}}</div>
+          <div class="description">
+            <span class="email"><b>Email:</b> {{{_highlightResult.email.value}}}</span>
+          </div>
+          <div class="description">
+            <span class="date"><b>Start Date:</b> {{{_highlightResult.startDate.value}}}</span>
+          </div>
+          <div class="description">
+            <span class="events"><b>Events Attended:</b> {{eventsAttended.length}}</span>
+          </div>
+          <div class="description">
+            <span class="eventlist"><b>Event List:</b> {{eventsAttended}}</span>
+          </div>
         </div>
-        <div class="description">
-          <span class="date"><b>Start Date:</b> {{{_highlightResult.startDate.value}}}</span>
+        <div class="extra content">
+          <a>
+            <i class="star icon"></i>
+            <span class="points">{{totalPoints}}</span>
+          </a>
         </div>
-        <div class="description">
-          <span class="events"><b>Events Attended:</b> {{eventsAttended.length}}</span>
-        </div>
-      </div>
-      <div class="extra content">
-        <a>
-          <i class="star icon"></i>
-          {{totalPoints}}
-        </a>
-      </div>
     </div>
   </script>
   <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
