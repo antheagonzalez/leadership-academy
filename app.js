@@ -12,7 +12,6 @@ require('dotenv').config();
 const app = express();
 
 app.use(cookieParser());
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
   secret: 'keyboard cat'
@@ -75,3 +74,5 @@ app.get('/login', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => console.log('App Running!'));
+
+// This a test
