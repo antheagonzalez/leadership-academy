@@ -12,6 +12,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cookieParser());
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
   secret: 'keyboard cat'
